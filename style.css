@@ -1,0 +1,218 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;700;800&display=swap');
+
+:root {
+  --bg: #09090b;
+  --panel: #121216;
+  --red: #ff303e;
+  --white: #f5f5f7;
+  --gray: #96969e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 80px;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 1px solid #29292e;
+  background: var(--bg);
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.logo span,
+h2 span {
+  color: var(--red);
+}
+
+.navbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.navbar nav a {
+  color: #aaaab2;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.navbar nav a:hover {
+  color: var(--red);
+}
+
+.hero {
+  min-height: 600px;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 80% 50%, #ff303e20, transparent 45%);
+}
+
+.eyebrow {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+.hero h1,
+.section h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  line-height: .95;
+}
+
+.hero h1 {
+  font-size: clamp(65px, 11vw, 130px);
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.description {
+  color: var(--gray);
+  margin: 25px 0;
+  line-height: 1.8;
+}
+
+.button {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  padding: 16px 22px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.button:hover {
+  background: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+.section {
+  padding: 90px 10%;
+  border-top: 1px solid #29292e;
+}
+
+.section h2 {
+  font-size: clamp(40px, 6vw, 65px);
+  margin-bottom: 35px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 22px;
+}
+
+.project-card {
+  min-width: 0;
+  background: var(--panel);
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.project-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform .35s;
+}
+
+.project-card:hover img {
+  transform: scale(1.04);
+}
+
+.project-card h3 {
+  font-size: 17px;
+  margin: 18px 16px 8px;
+}
+
+.project-card p {
+  color: var(--gray);
+  font-size: 12px;
+  margin: 0 16px;
+}
+
+.about > p:not(.eyebrow) {
+  color: var(--gray);
+  line-height: 1.9;
+  margin: 12px 0;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact .button {
+  margin-top: 20px;
+}
+
+footer {
+  padding: 30px 8%;
+  text-align: center;
+  color: var(--gray);
+  font-size: 10px;
+  border-top: 1px solid #29292e;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navbar nav {
+    gap: 16px;
+  }
+
+  .hero {
+    min-height: 520px;
+    padding: 80px 7%;
+  }
+
+  .section {
+    padding: 70px 7%;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
