@@ -5,10 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MY PORTFOLIO | ESPORT DESIGNER</title>
+  <title>ZEROZTIME.</title>
+
+    <!-- Website Icon -->
+  <link rel="icon" type="image/png" href="ZEROZTIMEz.png">
+</head>
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  
 </head>
 
 <body>
@@ -47,28 +52,32 @@
         </p>
 
         <!-- VISITOR COUNTER -->
-        <section
-          class="visitor-counter"
-          aria-label="Website visitor count"
-        >
-          <div class="visitor-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
-              <circle cx="12" cy="12" r="3"/>
-            </svg>
-          </div>
+ 
 
-          <div class="visitor-info">
-            <span class="visitor-label">TOTAL VISITORS</span>
+<section class="visitor-counter" aria-label="Website visitor count">
+  <div class="visitor-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>
+  </div>
 
-            <strong id="visitor-total" aria-live="polite">—</strong>
+  <div class="visitor-info">
+    <span class="visitor-label">TOTAL VISITORS</span>
+    <strong id="visitor-total" aria-live="polite">Loading...</strong>
+    <span class="visitor-status">
+      <span class="status-dot"></span>
+      VISIT COUNT
+    </span>
+  </div>
+</section>
 
-            <span class="visitor-status">
-              <span class="status-dot"></span>
-              VISIT COUNT
-            </span>
-          </div>
-        </section>
+<script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
+<script src="visitors.js" defer></script>
+
+
+<script src="script.js" defer></script>
+
         <!-- END VISITOR COUNTER -->
 
         <a class="button" href="#projects">
@@ -77,10 +86,16 @@
 
       </div>
 
+
       <!-- รูปภาพด้านขวา -->
       <div class="hero-image">
-        <img src="2000.png" alt="ZEROZTIME Artwork">
+        <img
+          id="hero-slideshow"
+          src="Zhou Fan Magic Emperor.jfif"
+          alt="ZEROZTIME Artwork"
+        >
       </div>
+
 
     </section>
 
@@ -129,7 +144,7 @@
       <h2>ABOUT <span>ME.</span></h2>
 
       <p>
-        I’m a graphic designer and programmer focused on bold visuals,
+        I’m zeorztime a graphic designer and programmer focused on bold visuals,
         and bringing creative ideas to life through design and code.
       </p>
 
@@ -165,6 +180,58 @@
   <footer>
     <p>© 2026 ZEROZTIME. ALL RIGHTS RESERVED.</p>
   </footer>
+  <!-- ZEROZTIME MUSIC PLAYER -->
+<div class="music-player" id="music-player">
+  <div class="music-cover">
+    <img
+      src="анимированные обои.jfif"
+      alt="ZEROZTIME cover"
+      onerror="this.style.display='none'"
+    >
+    <div class="cover-overlay">
+      <span class="music-note">♫</span>
+    </div>
+  </div>
+
+  <div class="music-details">
+    <span class="music-label">ZEROZTIME ORIGINAL</span>
+    <strong class="music-title">Filmmaker|Impure Desire</strong>
+
+    <div class="music-visualizer" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <label class="volume-control">
+      <icon></icon>
+      <span>VOL</span>
+      <input
+        id="music-volume"
+        type="range"
+        min="0"
+        max="100"
+        value="25"
+        aria-label="Music volume"
+      >
+    </label>
+  </div>
+
+  <button
+    class="music-play"
+    id="music-toggle"
+    type="button"
+    aria-label="Play music"
+    aria-pressed="false"
+  >
+    <span id="music-icon">▶</span>
+  </button>
+
+  <audio id="bg-music" loop preload="none">
+    <source src="Impure Desire.mp3" type="audio/mpeg">
+  </audio>
+  
+</div>
 
 </body>
 </html>
